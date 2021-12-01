@@ -14,6 +14,6 @@ public class StreamReduce {
     }
 
     public int getTotalLength(List<String> words) {
-        return 0;
+        return Integer.parseInt(words.stream().reduce(String.valueOf(0), (lengthSum, word) -> String.valueOf(Integer.parseInt(lengthSum) + word.length())));
     }
 }
