@@ -18,7 +18,7 @@ public class StreamSupplement {
     }
 
     public int getMaxValue(List<Integer> numbers) {
-        return 0;
+        return numbers.stream().mapToInt(Integer::intValue).reduce(0, (prev, curr) -> curr > prev ? curr : prev);
     }
 
 }
